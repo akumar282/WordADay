@@ -1,4 +1,4 @@
 import { WordList } from './wordList'
 
-const wl: WordList = new WordList()
+const wl = new WordList()
 console.log('hello')
