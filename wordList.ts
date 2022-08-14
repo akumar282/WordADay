@@ -1,9 +1,11 @@
 import * as fs from 'fs'
 
 const WORDLISTFILEPATH = 'engmix.txt' // potentially will change
+
 export class WordList {
   private readonly words: Map<number, string>
   private readonly usedWords: Set<string>
+
   constructor () {
     this.words = new Map()
     this.usedWords = new Set()
