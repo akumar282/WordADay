@@ -1,0 +1,1 @@
+npx tsc *.ts && node main.js
