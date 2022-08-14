@@ -1,6 +1,7 @@
 {
   "name": "wordaday",
   "version": "1.0.0",
+  "type": "commonjs",
   "description": "word a day application",
   "main": "index.js",
   "scripts": {
