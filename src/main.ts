@@ -18,8 +18,8 @@ async function queryWord (word: string): Promise<string> {
 let word
 do {
   word = wl.getWord()
-  console.log(word)
 } while (!word)
+console.log('help')
 const def = await queryWord(word)
-userClient.v1.tweet(def)
+// userClient.v1.tweet(def)
 export {}

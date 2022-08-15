@@ -14,7 +14,6 @@ async function queryWord(word) {
 let word;
 do {
     word = wl.getWord();
-    console.log(word);
 } while (!word);
+console.log('help');
 const def = await queryWord(word);
-userClient.v1.tweet(def);
