@@ -4,11 +4,13 @@ import fetch from 'node-fetch'
 export {}
 // const wl = new WordList()
 
+const config = require('apiconfig')
+
 const userClient = new TwitterApi({
-  appKey: '',
-  appSecret: '',
-  accessToken: '',
-  accessSecret: ''
+  appKey: config.appKey,
+  appSecret: config.appSecret,
+  accessToken: config.appSecret,
+  accessSecret: config.appSecret
 })
 // const rwClient = userClient.readWrite
 
