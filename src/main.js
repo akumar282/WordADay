@@ -16,5 +16,9 @@ async function queryWord(word) {
     console.log(data[0].meanings[0].definitions[0].definition);
     return data[0].meanings[0].definitions[0].definition;
 }
-const def = await queryWord('rest');
-userClient.v1.tweet(def);
+let word;
+do {
+    word = wl.getWord();
+} while (!word);
+console.log('help');
+const def = await queryWord(word);

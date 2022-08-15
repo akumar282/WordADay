@@ -19,7 +19,11 @@ async function queryWord (word: string): Promise<string> {
   console.log(data[0].meanings[0].definitions[0].definition)
   return data[0].meanings[0].definitions[0].definition
 }
+let word
+do {
+  word = wl.getWord()
+} while (!word)
 
-const def = await queryWord('rest')
-userClient.v1.tweet(def)
+const def = await queryWord(word)
+// userClient.v1.tweet(def)
 export {}
