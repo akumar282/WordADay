@@ -1,1 +1,1 @@
-npx tsc *.ts && node main.js
+npx tsc && node src/main.js
