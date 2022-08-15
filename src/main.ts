@@ -24,5 +24,5 @@ do {
 } while (!word)
 
 const def = await queryWord(word)
-userClient.v1.tweet( "The Word Of The Day Is: "+word+"\n" + "The Definition is: "+def)
+userClient.v1.tweet( 'The Word Of The Day Is: ' + word + '\n' + 'The Definition is: '+def)
 export {}
