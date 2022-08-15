@@ -2,11 +2,12 @@ import { TwitterApi } from 'twitter-api-v2';
 // import { WordList } from './wordList'
 import fetch from 'node-fetch';
 // const wl = new WordList()
+const config = require('apiconfig');
 const userClient = new TwitterApi({
-    appKey: '',
-    appSecret: '',
-    accessToken: '',
-    accessSecret: ''
+    appKey: config.appKey,
+    appSecret: config.appSecret,
+    accessToken: config.appSecret,
+    accessSecret: config.appSecret
 });
 // const rwClient = userClient.readWrite
 async function queryWord(word) {
