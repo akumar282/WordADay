@@ -6,12 +6,7 @@ export {}
 
 const config = require('apiconfig')
 
-const userClient = new TwitterApi({
-  appKey: config.appKey,
-  appSecret: config.appSecret,
-  accessToken: config.appSecret,
-  accessSecret: config.appSecret
-})
+const userClient = new TwitterApi(config.bearer)
 // const rwClient = userClient.readWrite
 
 async function queryWord (word: string): Promise<string> {
