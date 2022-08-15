@@ -1,10 +1,9 @@
 import { TwitterApi } from 'twitter-api-v2';
+import { apiconfig } from './apiconfig.js';
 // import { WordList } from './wordList'
 import fetch from 'node-fetch';
 // const wl = new WordList()
-const config = require('apiconfig');
-const userClient = new TwitterApi(config.bearer);
-// const rwClient = userClient.readWrite
+const userClient = new TwitterApi(apiconfig.bearer);
 async function queryWord(word) {
     const response = await fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${word}`);
     const data = await response.json();
