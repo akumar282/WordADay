@@ -1,17 +1,12 @@
 import { TwitterApi } from 'twitter-api-v2'
-// import { WordList } from './wordList'
+import { WordList } from './wordList.js'
+import { apiconfig } from './apiconfig.js'
 import fetch from 'node-fetch'
+
+const wl = new WordList()
+
 export {}
-// const wl = new WordList()
-
-const config = require('apiconfig')
-
-const userClient = new TwitterApi({
-  appKey: config.appKey,
-  appSecret: config.appSecret,
-  accessToken: config.appSecret,
-  accessSecret: config.appSecret
-})
+const userClient = new TwitterApi(apiconfig.bearer)
 // const rwClient = userClient.readWrite
 
 async function queryWord (word: string): Promise<string> {
@@ -20,7 +15,11 @@ async function queryWord (word: string): Promise<string> {
   console.log(data[0].meanings[0].definitions[0].definition)
   return data[0].meanings[0].definitions[0].definition
 }
-
-const def = await queryWord('rest')
+let word
+do {
+  word = wl.getWord()
+  console.log(word)
+} while (!word)
+const def = await queryWord(word)
 userClient.v1.tweet(def)
 export {}
