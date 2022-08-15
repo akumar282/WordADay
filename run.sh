@@ -1,1 +1,1 @@
-npx tsc && node src/main.js
+npx tsc && npm start

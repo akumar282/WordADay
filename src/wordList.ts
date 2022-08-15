@@ -1,6 +1,10 @@
 import * as fs from 'fs'
+import * as path from 'path'
+import { fileURLToPath } from 'url'
 
-const DEFAULTFILEPATH = 'engmix.txt' // potentially will change
+const DEFAULTFILEPATH = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../engmix.txt')
+
+// const DEFAULTFILEPATH = '../engmix.txt' // potentially will change
 
 export class WordList {
   private readonly words: Map<number, string>
