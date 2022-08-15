@@ -6,7 +6,12 @@ import fetch from 'node-fetch'
 const wl = new WordList()
 
 export {}
-const userClient = new TwitterApi(apiconfig.bearer)
+const userClient = new TwitterApi({
+  appKey: apiconfig.appKey,
+  appSecret: apiconfig.appSecret,
+  accessToken: apiconfig.accessToken,
+  accessSecret: apiconfig.accessSecret
+})
 // const rwClient = userClient.readWrite
 
 async function queryWord (word: string): Promise<string> {
@@ -21,5 +26,5 @@ do {
 } while (!word)
 
 const def = await queryWord(word)
-// userClient.v1.tweet(def)
+userClient.v1.tweet(def)
 export {}

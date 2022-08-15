@@ -3,7 +3,12 @@ import { WordList } from './wordList.js';
 import { apiconfig } from './apiconfig.js';
 import fetch from 'node-fetch';
 const wl = new WordList();
-const userClient = new TwitterApi(apiconfig.bearer);
+const userClient = new TwitterApi({
+    appKey: apiconfig.appKey,
+    appSecret: apiconfig.appSecret,
+    accessToken: apiconfig.accessToken,
+    accessSecret: apiconfig.accessSecret
+});
 // const rwClient = userClient.readWrite
 async function queryWord(word) {
     const response = await fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${word}`);
@@ -16,3 +21,4 @@ do {
     word = wl.getWord();
 } while (!word);
 const def = await queryWord(word);
+userClient.v1.tweet(def);
