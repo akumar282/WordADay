@@ -36,9 +36,14 @@ export class WordList {
     do {
       idx = Math.round(Math.random() * this.words.size)
       word = this.words.get(idx)
+      console.log(word)
     }
-    while (word && !(this.usedWords.has(word)))
-    if (!word) return undefined // unexpected behavior at this point
+    while (word && this.usedWords.has(word))
+    console.log(word)
+    if (!word) {
+      // console.log(word)
+      return undefined // unexpected behavior at this point
+    }
     this.usedWords.add(word)
     this.words.delete(idx)
     return word

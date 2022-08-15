@@ -15,5 +15,4 @@ let word;
 do {
     word = wl.getWord();
 } while (!word);
-console.log('help');
 const def = await queryWord(word);
