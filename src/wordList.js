@@ -2,7 +2,6 @@ import * as fs from 'fs';
 import * as path from 'path';
 import { fileURLToPath } from 'url';
 const DEFAULTFILEPATH = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../engmix.txt');
-// const DEFAULTFILEPATH = '../engmix.txt' // potentially will change
 export class WordList {
     words;
     usedWords;
