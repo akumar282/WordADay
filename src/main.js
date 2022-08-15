@@ -1,8 +1,8 @@
 import { TwitterApi } from 'twitter-api-v2';
 import { apiconfig } from './apiconfig.js';
-// import { WordList } from './wordList'
+import { WordList } from './wordList.js';
 import fetch from 'node-fetch';
-// const wl = new WordList()
+const wl = new WordList();
 const userClient = new TwitterApi({
     appKey: apiconfig.appKey,
     appSecret: apiconfig.appSecret,
@@ -20,5 +20,5 @@ let word;
 do {
     word = wl.getWord();
 } while (!word);
-console.log('help');
 const def = await queryWord(word);
+userClient.v1.tweet(def);
