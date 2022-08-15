@@ -1,6 +1,6 @@
 import * as fs from 'fs'
 
-const DEFAULTFILEPATH = 'engmix.txt' // potentially will change
+const DEFAULTFILEPATH = '../engmix.txt' // potentially will change
 
 export class WordList {
   private readonly words: Map<number, string>
