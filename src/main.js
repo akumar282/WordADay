@@ -10,21 +10,15 @@ const userClient = new TwitterApi({
     accessSecret: apiconfig.accessSecret
 });
 // const rwClient = userClient.readWrite
-function delay(ms) {
-    return new Promise(resolve => setTimeout(resolve, ms));
-}
 async function queryWord(word) {
     const response = await fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${word}`);
     const data = await response.json();
     console.log(data[0].meanings[0].definitions[0].definition);
     return data[0].meanings[0].definitions[0].definition;
 }
-while (true) {
-    let word;
-    do {
-        word = wl.getWord();
-    } while (!word);
-    const def = await queryWord(word);
-    userClient.v1.tweet("The Word Of The Day Is: " + word + "\n" + "The Definition is: " + def);
-    await delay(30 * 1000);
-}
+let word;
+do {
+    word = wl.getWord();
+} while (!word);
+const def = await queryWord(word);
+userClient.v1.tweet("The Word of the day is: " + word + "\n" + "The Definition is: " + def);
