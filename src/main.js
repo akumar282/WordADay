@@ -1,6 +1,6 @@
 import { TwitterApi } from 'twitter-api-v2';
-import { WordList } from './wordList.js';
 import { apiconfig } from './apiconfig.js';
+import { WordList } from './wordList.js';
 import fetch from 'node-fetch';
 const wl = new WordList();
 const userClient = new TwitterApi({
