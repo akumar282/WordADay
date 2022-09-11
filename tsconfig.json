@@ -1,6 +1,13 @@
 {
-    "extends": "@tsconfig/node16/tsconfig.json",
-    "compilerOptions": {},
-    "include": ["**/*"],
-    "exclude": ["node_modules"]
-  }
+  "extends": "@tsconfig/node16/tsconfig.json",
+  "compilerOptions": {
+    "target": "es2022",
+    "module": "esnext",
+  },
+  "include": [
+    "src/**/*"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}
