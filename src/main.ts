@@ -36,6 +36,7 @@ async function chooseWord (): Promise<(string | undefined)[]> {
 }
 
 async function main () {
+  console.log('Startup')
   while (true) {
     let isItNull: boolean
     let data: (string | undefined)[]
