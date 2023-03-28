@@ -35,19 +35,23 @@ async function chooseWord (): Promise<(string | undefined)[]> {
   return ret
 }
 
-while (true) {
-  let isItNull : boolean
-  let data:(string|undefined)[]
-  do {
-    isItNull = false
-    data = await chooseWord()
-    for (const w of data) {
-      if (!w) {
-        isItNull = true
+async function main () {
+  while (true) {
+    let isItNull: boolean
+    let data: (string | undefined)[]
+    do {
+      isItNull = false
+      data = await chooseWord()
+      for (const w of data) {
+        if (!w) {
+          isItNull = true
+        }
       }
-    }
-  } while (isItNull)
+    } while (isItNull)
 
-  userClient.v1.tweet('The Word Of The Day Is: ' + data[0] + '\n' + 'The Definition is: ' + data[1])
-  await delay(24 * 60 * 60 * 1000)
+    userClient.v1.tweet('The Word Of The Day Is: ' + data[0] + '\n' + 'The Definition is: ' + data[1])
+    await delay(24 * 60 * 60 * 1000)
+  }
 }
+
+main()
