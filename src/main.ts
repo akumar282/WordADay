@@ -51,7 +51,7 @@ async function main () {
     } while (isItNull)
 
     userClient.v1.tweet('The Word Of The Day Is: ' + data[0] + '\n' + 'The Definition is: ' + data[1])
-    await delay(24 * 60 * 60 * 1000)
+    await delay(60 * 1000)
   }
 }
 
